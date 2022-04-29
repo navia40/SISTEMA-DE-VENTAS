@@ -1,0 +1,93 @@
+html {height: 100%;}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+
+/*header*/
+.header{background-color:black; color:white; grid-area:header;text-align: center; padding:40px;}
+
+/*login*/
+.login{grid-area:login;}
+  /*login: textos textbox y botones centrados*/
+  .login-box{
+    grid-area:login;
+    padding: 25px;
+      padding-top: 25px;
+      padding-right: 25px;
+      padding-bottom: 25px;
+      padding-left: 25px;
+    
+  }
+
+  /*logeo por redes sociales*/
+  .social-login{padding: 10px;}
+  .btn-link-1.btn-link-1-facebook { background: #4862a3; color:white;}
+  .btn-link-1.btn-link-1-twitter { background: #55acee; color:white;}
+  .btn-link-1.btn-link-1-google-plus { background: #dd4b39; color:white;}
+
+/*Registro */
+  .registro{
+    grid-area:register;
+    text-align: center;
+  }
+  .register-box{
+    padding: 25px;
+      padding-top: 25px;
+      padding-right: 25px;
+      padding-bottom: 25px;
+      padding-left: 25px;
+  }
+/*footer*/
+.footer{background-color: darkgrey; grid-area:footer;text-align: center;padding:40px;color:white}
+
+/*¿que es responsive? SIGNIFICA DISEÑO DE PAGINA WEB ADAPTADO A CUALQUIER DISPOSITIVO*/
+
+/*pantalla de celular */ 
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header"  auto
+    "login"  auto
+    "register"    auto
+    "footer"  auto;
+}
+/*pantalla tablet */
+@media (min-width: 700px) and (max-width:950px) {
+  .login{transition: 0.4s;}
+  .registro{transition: 0.4s;}
+  .social-login{text-align: center;}
+  .titulo{text-align: center;}
+  .grid-container {
+    grid-template:
+      "header  header" 100px
+      "login  register" auto
+      "footer  footer" 100px /
+      65% 35%;
+  }
+}
+/*pantalla pc*/
+@media (min-width: 950px) {
+  .registro{
+    position: static;
+    margin-right: 120px;
+  }
+  .login{
+    position: static;
+    margin-bottom: auto;
+    transition: 0.4s;
+    margin-left: 120px;
+  }
+  .social-login{text-align: center;}
+  .titulo{text-align: center;}
+  .grid-container {
+    grid-template:
+      "header  header" 100px
+      "login  register" auto
+      "footer  footer" 100px /
+      50% 50%;
+  }
+}
